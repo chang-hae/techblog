@@ -6,7 +6,6 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nord } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Wrapper = styled.div`
-    width: 100vw;
     max-width: 900px;
     margin: 0 auto;
     min-height: 50vh;
@@ -17,7 +16,9 @@ const FlexContainer = styled.div`
     flex-direction: column;
 `;
 
-const Header = styled.div``;
+const Header = styled.div`
+    padding: 10px;
+`;
 
 const Title = styled.div`
     font-size: 2.4rem;
@@ -50,6 +51,7 @@ const Profile = styled.img`
 `;
 
 const Content = styled.div`
+    padding: 15px;
     font-size: 1.3rem;
     line-height: 2.5rem;
 `;
