@@ -227,9 +227,9 @@ const Page1 = () => {
                 <Header>
                     <Title>우당탕탕 리액트로 만들어보는 기술블로그</Title>
                     <Author>
-                        <Datetime>2022. 09. 12</Datetime>
+                        <Datetime>2022. 09. 21</Datetime>
                         <Name>ChangHae</Name>
-                        <Profile src="https://images.unsplash.com/photo-1662914387418-3b93b1fd53db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
+                        <Profile src="/images/changhae.png" />
                     </Author>
                 </Header>
                 <Content>
