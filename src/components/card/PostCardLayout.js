@@ -1,14 +1,19 @@
 import * as React from 'react';
-import { Datetime, FlexContainer, Title, Wrapper } from './PostCardLayoutItem';
+import { Datetime, Division, FlexContainer, Title, Wall, Wrapper } from './PostCardLayoutItem';
 
 const PostCardLayout = (props) => {
-    const { title, datetime } = props;
+    const { title, division, datetime } = props;
     return (
         <Wrapper>
             <FlexContainer>
                 <Datetime>
                     {datetime}
                 </Datetime>
+                <Wall>|</Wall>
+                <Division>
+                    {division}
+                </Division>
+                <Wall>|</Wall>
                 <Title>
                     {title}
                 </Title>
