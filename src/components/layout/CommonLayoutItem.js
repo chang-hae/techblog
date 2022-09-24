@@ -6,7 +6,13 @@ export const Wrapper = styled.div`
     min-height: 50vh;
 `;
 
-export const FlexContainer = styled.div`
+export const FlexRowContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`;
+
+export const FlexColumnContainer = styled.div`
     display: flex;
     flex-direction: column;
 `;
@@ -15,11 +21,14 @@ export const Header = styled.div`
     padding: 10px;
 `;
 
+export const Underline = styled.div`
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+`;
+
 export const Title = styled.div`
     font-size: 2.4rem;
     font-weight: bold;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 export const Author = styled.div`
@@ -41,6 +50,13 @@ export const Nickname = styled.span`
 export const Profile = styled.img`
     width: 2.4rem;
     height: 2.4rem;
+    padding: 0.4rem;
+    border-radius: 100%;
+`;
+
+export const BigProfile = styled.img`
+    width: 3.6rem;
+    height: 3.6rem;
     padding: 0.4rem;
     border-radius: 100%;
 `;

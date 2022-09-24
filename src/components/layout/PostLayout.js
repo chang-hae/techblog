@@ -1,11 +1,13 @@
 import * as React from 'react';
 import CommonLayout from './CommonLayout';
-import { Author, Datetime, Nickname, Profile, Title } from './CommonLayoutItem';
+import { Author, Datetime, Nickname, Profile, Title, Underline } from './CommonLayoutItem';
 
 const Header = ({ title, datetime }) => {
     return (
         <>
-            <Title>{title}</Title>
+            <Underline>
+                <Title>{title}</Title>
+            </Underline>
             <Author>
                 <Datetime>{datetime}</Datetime>
                 <Nickname>ChangHae</Nickname>
@@ -20,7 +22,7 @@ const PostLayout = (props) => {
     return (
         <CommonLayout
             header={<Header title={title} datetime={datetime} />}
-            content={content}        
+            content={content}
         />
     )
 }

@@ -1,12 +1,15 @@
 import * as React from 'react';
 import CommonLayout from './CommonLayout';
-import { Title } from './CommonLayoutItem';
+import { BigProfile, FlexRowContainer, Title, Underline } from './CommonLayoutItem';
 
 const Header = ({ title }) => {
     return (
-        <>
-            <Title>{title}</Title>
-        </>
+        <Underline>
+            <FlexRowContainer>
+                <Title>{title}</Title>
+                <BigProfile src="/images/changhae.png" />
+            </FlexRowContainer>
+        </Underline>
     );
 }
 
@@ -15,7 +18,7 @@ const HomeLayout = (props) => {
     return (
         <CommonLayout
             header={<Header title={title} />}
-            content={content}        
+            content={content}
         />
     )
 }
