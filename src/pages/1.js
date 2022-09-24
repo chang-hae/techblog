@@ -1,60 +1,9 @@
 import * as React from 'react';
-import styled from "styled-components";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nord } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-const Wrapper = styled.div`
-    max-width: 900px;
-    margin: 0 auto;
-    min-height: 50vh;
-`;
-
-const FlexContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const Header = styled.div`
-    padding: 10px;
-`;
-
-const Title = styled.div`
-    font-size: 2.4rem;
-    font-weight: bold;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-`;
-
-const Author = styled.div`
-    display: flex;
-    align-items: center;
-    padding: 0.8rem 0;
-`;
-
-const Datetime = styled.span`
-    font-size: 1.1rem;
-    padding: 0.4rem;
-`;
-
-const Name = styled.span`
-    font-size: 1.1rem;
-    padding: 0.4rem;
-`;
-
-const Profile = styled.img`
-    width: 2.4rem;
-    height: 2.4rem;
-    padding: 0.4rem;
-    border-radius: 100%;
-`;
-
-const Content = styled.div`
-    padding: 15px;
-    font-size: 1.3rem;
-    line-height: 2.5rem;
-`;
+import PostLayout from '../components/layout/PostLayout';
 
 const content = `
 아 네이밍이 제일 어렵다 ㅜㅜ
@@ -222,25 +171,17 @@ const em = ({ node, children, ...props }) => {
 
 const Page1 = () => {
     return (
-        <Wrapper>
-            <FlexContainer>
-                <Header>
-                    <Title>우당탕탕 리액트로 만들어보는 기술블로그</Title>
-                    <Author>
-                        <Datetime>2022. 09. 21</Datetime>
-                        <Name>ChangHae</Name>
-                        <Profile src="/images/changhae.png" />
-                    </Author>
-                </Header>
-                <Content>
-                    <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{ code, blockqute, img, em }}>
-                        {content}
-                    </ReactMarkdown>
-                </Content>
-            </FlexContainer>
-        </Wrapper>
+        <PostLayout
+            title="우당탕탕 리액트로 만들어보는 기술블로그"
+            datetime="2022. 09. 21"
+            content={
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{ code, blockqute, img, em }}>
+                    {content}
+                </ReactMarkdown>
+            }
+        />
     )
 }
 
