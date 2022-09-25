@@ -18,7 +18,7 @@ export const FlexColumnContainer = styled.div`
 `;
 
 export const Header = styled.div`
-    padding: 10px;
+    padding: 10px 0;
 `;
 
 export const Underline = styled.div`
@@ -29,7 +29,7 @@ export const Underline = styled.div`
 export const Title = styled.div`
     font-size: 2.4rem;
     font-weight: bold;
-    padding: 1rem 0;
+    padding: 1rem;
 `;
 
 export const Author = styled.div`
@@ -64,7 +64,7 @@ export const BigProfile = styled.img`
 `;
 
 export const Content = styled.div`
-    padding: 15px;
+    padding: 15px 0;
     font-size: 1.3rem;
     line-height: 2.5rem;
 `;

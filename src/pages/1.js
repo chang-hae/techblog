@@ -170,7 +170,7 @@ export const StyledLink = styled(Link)\`
 
 잘 바뀌네요 ★
 
-이처럼 전역적으로 써야하는 데이터 같은 경우는 Context 로 관리하시면 더 경제적으로 개발할 수 있어요.
+이처럼 전역적으로 써야하는 데이터 같은 경우는 **\`Context\`** 로 관리하면 더 경제적으로 개발할 수 있어요.
 
 ![primary royalblue image](/pages/1/5.jpg)
 `;

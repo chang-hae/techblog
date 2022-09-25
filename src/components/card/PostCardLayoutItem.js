@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    margin: 2rem 0;
+    margin: 2rem 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     
@@ -18,14 +18,12 @@ export const FlexContainer = styled.div`
 `;
 
 export const Datetime = styled.span`
-    width: 110px;
     text-align: center;
     font-size: 1.1rem;
     font-weight: bold;
 `;
 
 export const Division = styled.span`
-    width: 80px;
     text-align: center;
     font-size: 1.1rem;
     font-weight: bold;
