@@ -27,7 +27,7 @@ export const Underline = styled.div`
 `;
 
 export const Title = styled.div`
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: bold;
     padding: 1rem;
 `;
@@ -63,8 +63,11 @@ export const BigProfile = styled.img`
     border-radius: 100%;
 `;
 
+export const ContentContainer = styled.div`
+`;
+
 export const Content = styled.div`
-    padding: 15px 0;
+    padding: 10px;
     font-size: 1.3rem;
     line-height: 2.5rem;
 `;

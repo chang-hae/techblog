@@ -30,8 +30,9 @@ export const Division = styled.span`
 `;
 
 export const Title = styled.span`
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding-left: 0.5rem;
+    word-break: break-all;
 `;
 
 export const Wall = styled.span`
