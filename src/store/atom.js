@@ -6,7 +6,7 @@ export const postState = atom({
     default: [
         {
             no: 1,
-            title: "createContext 로 CustomThemeProvider 만들어보기",
+            title: "createContext 로 ThemeProvider 만들어보기",
             division: divcode.react,
             datetime: "2022. 09. 25",
         },
