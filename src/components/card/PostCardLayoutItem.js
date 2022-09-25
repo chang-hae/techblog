@@ -2,19 +2,19 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    padding: 1rem;
     margin: 2rem 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     
     &:hover {
-        border-color : skyblue;
+        border-color : ${props => props.primary || "skyblue"};
     }
 `;
 
 export const FlexContainer = styled.div`
     display: flex;
     flex-direction: row;
+    padding: 1rem;
 `;
 
 export const Datetime = styled.span`
@@ -48,6 +48,6 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
 
     &:hover {
-        color : skyblue;
+        color : ${props => props.primary || "skyblue"};
     }
 `;

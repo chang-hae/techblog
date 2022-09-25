@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useRecoilValue } from 'recoil';
 import PostCardLayout from '../components/card/PostCardLayout';
-import { StyledLink } from '../components/card/PostCardLayoutItem';
 import HomeLayout from '../components/layout//HomeLayout';
 import { postState } from '../store/atom';
 
@@ -9,9 +8,7 @@ const Content = ({ postCards }) => {
     return (
         <>
             {postCards.map(({ no, datetime, division, title }) => (
-                <StyledLink to={`/${no}`} key={no}>
-                    <PostCardLayout datetime={datetime} division={division} title={title} />
-                </StyledLink>
+                <PostCardLayout key={no} no={no} datetime={datetime} division={division} title={title} />
             ))}
         </>
     );
