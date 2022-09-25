@@ -46,6 +46,7 @@ export const Wall = styled.span`
 export const StyledLink = styled(Link)`
     color: black;
     text-decoration: none;
+    user-select: none;
 
     &:hover {
         color : ${props => props.primary || "skyblue"};

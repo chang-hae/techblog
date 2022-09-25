@@ -1,47 +1,33 @@
 import * as React from 'react';
 import PostLayout from '../components/layout/PostLayout';
-import { useRecoilValue } from 'recoil';
-import { postState } from '../store/atom';
 import Markdown from '../components/markdown/Markdown';
 
 const content = `
-[material-ui](https://mui.com/core/ "material ui link") 를 써보면 ThemeProvider 가 제공되는데요.
+### \` Theme.js 만들기 \`
 
-### 1. Context 가 뭡니까용?
 
-### 2. Theme.js 만들기
-
-\`\`\`
-import * as React from 'react';
-import { createContext } from 'react';
-
-const ThemeContext = createContext();
-
-const ThemeContextProvider = ({ children }) => {
-    return (
-        <ThemeContext.Provider
-            value={{
-                primary: "royalblue"
-            }}
-        >
-            {children}
-        </ThemeContext.Provider>
-    );
-}
-
-export { ThemeContextProvider, ThemeContext };
-\`\`\`
+### \` ThemeProvider 적용하기 \`
 
 
 
-### 3. ThemeProvider 적용하기
+This is an H1
+=============
 
-***
+This is an H2
+-------------
 
-### 4. Theme Context 값 사용하기
+# This is a H1
+## This is a H2
+### This is a H3
+#### This is a H4
+##### This is a H5
+###### This is a H6
 
+**굵게**
 
+*기울이기*
 
+일반 텍스트
 
 \`\`\`
     String a = "aaa";
@@ -124,17 +110,14 @@ __double underscores__
 이렇게
 `;
 
-const Page1 = () => {
-    const postCards = useRecoilValue(postState);
-    const post = postCards.filter(postCard => postCard.no === 1).pop();
-
+const PageTemplate = () => {
     return (
         <PostLayout
-            title={post.title}
-            datetime={post.datetime}
+            title="마크다운 템플릿"
+            datetime="2022. 09. 25"
             content={<Markdown content={content} />}
         />
     )
 }
 
-export default Page1;
+export default PageTemplate;

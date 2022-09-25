@@ -23,6 +23,7 @@ export const Header = styled.div`
 
 export const Underline = styled.div`
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    user-select: none;
 `;
 
 export const Title = styled.div`
@@ -35,6 +36,7 @@ export const Author = styled.div`
     display: flex;
     align-items: center;
     padding: 0.8rem 0;
+    user-select: none;
 `;
 
 export const Datetime = styled.span`
