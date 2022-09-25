@@ -2,7 +2,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    padding: 1rem 0;
+    padding: 1rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+    &:hover {
+        border-color : skyblue;
+    }
 `;
 
 export const FlexContainer = styled.div`
@@ -42,6 +49,5 @@ export const StyledLink = styled(Link)`
 
     &:hover {
         color : skyblue;
-        background-color: red;
     }
 `;
