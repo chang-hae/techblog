@@ -29,7 +29,7 @@ const content = `
 
 이 부분에 착안해서 **\`createContext\`** 를 활용한 *ThemeProvider* 를 한 번 만들어 볼께요.
 
-![smile image](/pages/1/2.jpg "option")
+![smile image](/pages/1/2.jpg)
 
 롸쓰고우!
 
@@ -70,7 +70,109 @@ export { ThemeContextProvider, ThemeContext };
 
 ### 4. ThemeProvider 적용하기
 
-### 5. Theme Context 값 사용하기
+\`\`\`js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Page1 from './pages/1';
+import { RecoilRoot } from 'recoil';
+import { ThemeContextProvider } from './context/Theme';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+    <RecoilRoot>
+      <ThemeContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/1" element={<Page1 />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </ThemeContextProvider>
+    </RecoilRoot>
+  </React.StrictMode>
+);
+\`\`\`
+
+앞에서 만들었던 *ThemeContextProvider* 를 불러와서 컴포넌트 트리 전체를 감싸주고 있어요.
+
+이렇게 적용하면 끝이예요 ★
+
+### 5. ThemeContext 값 꺼내쓰기
+
+\`\`\`js
+import * as React from 'react';
+import { ThemeContext } from '../../context/Theme';
+import { Datetime, Division, FlexContainer, StyledLink, Title, Wall, Wrapper } from './PostCardLayoutItem';
+
+const PostCardLayout = (props) => {
+    const { primary } = React.useContext(ThemeContext);
+    
+    const { no, title, division, datetime } = props;
+
+    return (
+        <Wrapper primary={primary}>
+            <StyledLink to={\`/\${no}\`} primary={primary} >
+                <FlexContainer>
+                    <Datetime>
+                        {datetime}
+                    </Datetime>
+                    <Wall>|</Wall>
+                    <Division>
+                        {division}
+                    </Division>
+                    <Wall>|</Wall>
+                    <Title>
+                        {title}
+                    </Title>
+                </FlexContainer>
+            </StyledLink>
+        </Wrapper>
+    )
+}
+
+export default PostCardLayout;
+\`\`\`
+
+*ThemeContext* 에서 **\`primary\`** 값을 꺼내서 *StyledLink* 컴포넌트로 전달해주고 있어요.
+
+그러면 *StyledLink* 컴포넌트는 이 값을 받아서 컬러를 세팅한답니다.
+
+\`\`\`js
+export const StyledLink = styled(Link)\`
+    color: black;
+    text-decoration: none;
+    user-select: none;
+
+    &:hover {
+        color : \${props => props.primary || "skyblue"};
+    }
+\`;
+\`\`\`
+
+참 신기하죠잉.
+
+### 6. ThemeContext 값 바꿔보기 
+
+그러면 제대로 잘 동작하는지 *ThemeContext* 에서 *primary* 값을 red 로 바꿔볼께요.
+
+> [Before] primary: "royalblue"
+
+![primary royalblue image](/pages/1/3.jpg)
+
+> [After] primary: "red"
+
+![primary royalblue image](/pages/1/4.jpg)
+
+잘 바뀌네요 ★
+
+이처럼 전역적으로 써야하는 데이터 같은 경우는 Context 로 관리하시면 더 경제적으로 개발할 수 있어요.
+
+![primary royalblue image](/pages/1/5.jpg)
 `;
 
 const Page1 = () => {

@@ -40,7 +40,7 @@ const blockquote = ({ node, children, ...props }) => {
         <blockquote
             style={{
                 background: "#f0f0f0",
-                padding: "5px 20px",
+                padding: "0px 20px",
                 margin: "0px",
                 borderRadius: "10px",
                 fontSize: "24px",

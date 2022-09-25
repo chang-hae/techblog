@@ -18,7 +18,7 @@ const Home = () => {
     const postCards = useRecoilValue(postState);
     return (
         <HomeLayout
-            title="창해 기술블로그 - 우당탕탕 1인창업 도전기"
+            title="창해 기술블로그"
             content={<Content postCards={postCards} />}
         />
     )
