@@ -35,7 +35,7 @@ export const Title = styled.div`
 export const Author = styled.div`
     display: flex;
     align-items: center;
-    padding: 0.8rem 0;
+    padding: 0.8rem;
     user-select: none;
 `;
 
@@ -67,7 +67,7 @@ export const ContentContainer = styled.div`
 `;
 
 export const Content = styled.div`
-    padding: 10px;
+    padding: 10px 15px;
     font-size: 1.3rem;
     line-height: 2.5rem;
 `;
