@@ -10,5 +10,11 @@ export const postState = atom({
             division: divcode.react,
             datetime: "2022. 09. 25",
         },
+        {
+            no: 2,
+            title: "React-Native 프로젝트 생성 후 세팅하기",
+            division: divcode.reactNative,
+            datetime: "2022. 10. 01",
+        },
     ]
 })
