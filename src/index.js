@@ -7,6 +7,7 @@ import { RecoilRoot } from 'recoil';
 import { ThemeContextProvider } from './context/Theme';
 import Page1 from './pages/1';
 import Page2 from "./pages/2";
+import Page3 from "./pages/3";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -19,6 +20,7 @@ root.render(
             <Route path="/" element={<Home />}></Route>
             <Route path="/1" element={<Page1 />}></Route>
             <Route path="/2" element={<Page2 />}></Route>
+            <Route path="/3" element={<Page3 />}></Route>
           </Routes>
         </BrowserRouter>
       </ThemeContextProvider>

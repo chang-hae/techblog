@@ -12,9 +12,15 @@ export const postState = atom({
         },
         {
             no: 2,
-            title: "React-Native 프로젝트 생성 후 세팅하기",
+            title: "프로젝트 생성 및 앱 실행하기",
             division: divcode.reactNative,
             datetime: "2022. 10. 01",
+        },
+        {
+            no: 3,
+            title: "프로젝트 폴더 구조 정리 및 절대경로 사용 설정하기",
+            division: divcode.reactNative,
+            datetime: "2022. 10. 02",
         },
     ]
 })

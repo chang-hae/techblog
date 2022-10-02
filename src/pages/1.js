@@ -100,7 +100,7 @@ root.render(
 
 앞에서 만들었던 *ThemeContextProvider* 를 불러와서 컴포넌트 트리 전체를 감싸주고 있어요.
 
-이렇게 적용하면 끝이예요 ★
+이렇게 적용하면 끝이예요 😆
 
 ### 5. ThemeContext 값 꺼내쓰기
 
@@ -168,7 +168,7 @@ export const StyledLink = styled(Link)\`
 
 ![primary royalblue image](/pages/1/4.jpg)
 
-잘 바뀌네요 ★
+잘 바뀌네요 😁
 
 이처럼 전역적으로 써야하는 데이터 같은 경우는 **\`Context\`** 로 관리하면 더 경제적으로 개발할 수 있어요.
 

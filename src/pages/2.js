@@ -155,7 +155,7 @@ npx react-native run-android
 
 const Page2 = () => {
     const postCards = useRecoilValue(postState);
-    const post = postCards.filter(postCard => postCard.no === 1).pop();
+    const post = postCards.filter(postCard => postCard.no === 2).pop();
 
     return (
         <PostLayout
