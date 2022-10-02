@@ -18,7 +18,7 @@ export const postState = atom({
         },
         {
             no: 3,
-            title: "프로젝트 폴더 구조 정리 및 절대경로 사용 설정하기",
+            title: "프로젝트 구조 및 절대경로 사용 세팅하기",
             division: divcode.reactNative,
             datetime: "2022. 10. 02",
         },

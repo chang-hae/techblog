@@ -135,23 +135,122 @@ const MoodList = () => {
 export default MoodList;
 \`\`\`
 
+\`\`\`js
+import React from 'react';
+import { SafeAreaView, ScrollView, StatusBar, useColorScheme, } from 'react-native';
+import Login from './Screens/Login';
+import MoodList from './Screens/MoodList';
+import MoodSet from './Screens/MoodSet';
+
+const App = () => {
+  const isDarkMode = useColorScheme() === 'dark';
+
+  return (
+    <SafeAreaView>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <Login />
+          <MoodSet />
+          <MoodList />
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default App;
+\`\`\`
+
 ![styled components screen](/pages/3/4.jpg)
 
 스타일링이 잘 적용된 것을 확인할 수 있어요. 😁
 
 ### 3. 절대경로 사용 설정
 
-**\`react-native-cli\`**  는 *react-native* 프로젝트를 손쉽게 만들어주는 도구인데요.
+프로젝트 소스파일은 *src* 폴더에 모여있는데요.
 
-아래 명령문으로 *react-native-cli* 를 설치해주세요.
+이 *src* 폴더를 *root* 폴더로 사용하려면 어떻게 세팅해야하는지 알아볼께요.
+
+먼저 *babel-plugin-root-import* 를 설치해주세요.
 
 \`\`\`bash
-npm install -g react-native-cli
+yarn add -D babel-plugin-root-import
 \`\`\`
 
-설치가 완료되면 아래 명령어를 통해 *react-native-cli* 버전을 확인하실 수 있어요.
+그리고 프로젝트의 *babel.config.js* 파일을 열고 아래와 같이 수정해주세요.
 
-![react native cli version command](/pages/2/2.jpg)
+\`\`\`js
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    'babel-plugin-styled-components',
+    [
+      'babel-plugin-root-import',
+      {
+        rootPathPrefix: '~',
+        rootPathSuffix: 'src',
+      },
+    ],
+  ],
+};
+\`\`\`
+
+코드를 보시면 *rootPathSuffix* 가 *src* 로 설정된 것을 보실 수 있어요.
+
+이제 *src* 가 *root* 폴더로 사용될 거예요.
+
+타입스크립트를 사용한다면 여기서 하나 더 세팅을 해주어야하는데요.
+
+바로 *tsconfig.json* 파일에 아래 내용을 추가해주어야해요.
+
+\`\`\`json
+{
+  "compilerOptions": {
+    ...
+    "baseUrl": "./src", // all paths are relative to the baseUrl
+    "paths": {
+      "~/*": ["*"] // resolve any \`~/foo/bar\` to \`<baseUrl>/foo/bar\`
+    }
+  },
+  ...
+}
+\`\`\`
+
+여기까지 설정해주시면 세팅은 끝이 나게되요.
+
+그러면 *App.tsx* 파일에서 *Login*, *MoodSet*, *MoodList* 를 *import* 할 때 **~** 를 사용해서 불러와볼께요. 
+
+***~*** 는 *root* 폴더로 프로젝트에서는 ***src*** 폴더를 의미해요.
+
+\`\`\`js
+import React from 'react';
+import { SafeAreaView, ScrollView, StatusBar, useColorScheme, } from 'react-native';
+import Login from '~/Screens/Login';
+import MoodList from '~/Screens/MoodList';
+import MoodSet from '~/Screens/MoodSet';
+
+const App = () => {
+  const isDarkMode = useColorScheme() === 'dark';
+
+  return (
+    <SafeAreaView>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <Login />
+          <MoodSet />
+          <MoodList />
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default App;
+\`\`\`
+
+![styled components screen](/pages/3/5.jpg)
+
+***src*** 절대경로가 제대로 세팅되어 화면이 잘 나오는 것을 확인할 수 있어요.
+
+다음 글에서는 화면전환에 사용되는 네비게이션 기능에 대해 알아보도록 할께요. 😁
 `;
 
 const Page3 = () => {
