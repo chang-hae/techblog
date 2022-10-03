@@ -22,5 +22,11 @@ export const postState = atom({
             division: divcode.reactNative,
             datetime: "2022. 10. 02",
         },
+        {
+            no: 4,
+            title: "@react-navigation 으로 화면 전환하기",
+            division: divcode.reactNative,
+            datetime: "2022. 10. 03",
+        },
     ]
 })
