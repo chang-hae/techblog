@@ -31,9 +31,11 @@ export const NavigationBar = styled.div`
 export const NavigationTitle = styled.div`
     font-size: 1.2rem;
     font-weight: bold;
+    padding: 0 1rem;
 `;
 
 export const NavigationLinks = styled.div`
+    padding: 0 1rem;
 `;
 
 export const NavigationIconLink = styled.img`
