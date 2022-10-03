@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+    padding: 1rem 0;
+`;
+
+export const PostCardWrapper = styled.div`
     margin: 2rem 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     
     &:hover {
-        border-color : ${props => props.primary || "skyblue"};
+        border-color : ${props => props.primary || "royalblue"};
     }
 `;
 
@@ -41,13 +44,3 @@ export const Wall = styled.span`
     padding-left: 1rem;
     padding-right: 1rem;
 `
-
-export const StyledLink = styled(Link)`
-    color: black;
-    text-decoration: none;
-    user-select: none;
-
-    &:hover {
-        color : ${props => props.primary || "skyblue"};
-    }
-`;

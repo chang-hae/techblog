@@ -1,20 +1,50 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
     max-width: 900px;
     margin: 0 auto;
     min-height: 50vh;
 `;
 
-export const FlexRowContainer = styled.div`
+export const NavigationContainer = styled.div`
+    width: 100%;
+    background: #ffffff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    user-select: none;
+`;
+
+export const NavigationBar = styled.div`
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 `;
 
-export const FlexColumnContainer = styled.div`
+export const NavigationTitle = styled.div`
+    font-size: 1.2rem;
+    font-weight: bold;
+`;
+
+export const NavigationLinks = styled.div`
+`;
+
+export const NavigationIconLink = styled.img`
+    width: 2.4rem;
+    height: 2.4rem;
+`;
+
+export const FlexContainer = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 7rem;
 `;
 
 export const Header = styled.div`
@@ -70,4 +100,14 @@ export const Content = styled.div`
     padding: 10px 15px;
     font-size: 1.3rem;
     line-height: 2.5rem;
+`;
+
+export const StyledLink = styled(Link)`
+    color: black;
+    text-decoration: none;
+    user-select: none;
+
+    &:hover {
+        color : ${props => props.primary || "royalblue"};
+    }
 `;

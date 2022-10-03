@@ -22,7 +22,10 @@ const PostLayout = (props) => {
     return (
         <CommonLayout
             header={<Header title={title} datetime={datetime} />}
-            content={content}
+            content={<>
+                {content}
+                <Underline />
+            </>}
         />
     )
 }

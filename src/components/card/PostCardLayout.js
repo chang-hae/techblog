@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ThemeContext } from '../../context/Theme';
-import { Datetime, Division, FlexContainer, StyledLink, Title, Wall, Wrapper } from './PostCardLayoutItem';
+import { StyledLink } from '../layout/CommonLayoutItem';
+import { Datetime, Division, FlexContainer, Title, Wall, PostCardWrapper } from './PostCardLayoutItem';
 
 const PostCardLayout = (props) => {
     const { primary } = React.useContext(ThemeContext);
@@ -8,7 +9,7 @@ const PostCardLayout = (props) => {
     const { no, title, division, datetime } = props;
 
     return (
-        <Wrapper primary={primary}>
+        <PostCardWrapper primary={primary}>
             <StyledLink to={`/${no}`} primary={primary} >
                 <FlexContainer>
                     <Datetime>
@@ -24,7 +25,7 @@ const PostCardLayout = (props) => {
                     </Title>
                 </FlexContainer>
             </StyledLink>
-        </Wrapper>
+        </PostCardWrapper>
     )
 }
 
