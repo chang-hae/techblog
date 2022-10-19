@@ -28,5 +28,11 @@ export const postState = atom({
             division: divcode.reactNative,
             datetime: "2022. 10. 03",
         },
+        {
+            no: 5,
+            title: "@react-navigation/bottom-tabs 사용하기",
+            division: divcode.reactNative,
+            datetime: "2022. 10. 19",
+        },
     ]
 })
