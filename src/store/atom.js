@@ -34,5 +34,11 @@ export const postState = atom({
             division: divcode.reactNative,
             datetime: "2022. 10. 19",
         },
+        {
+            no: 6,
+            title: "react-native-vector-icons 사용하기",
+            division: divcode.reactNative,
+            datetime: "2022. 10. 22",
+        },
     ]
 })
