@@ -6,12 +6,7 @@ import Markdown from '../components/markdown/Markdown';
 
 const content = `
 
-> 이번 글에서는 윈도우에서 react-native 프로젝트를 만들고 앱을 실행해보는 과정을 정리해봤어요.
-
-1. react-native-cli 설치
-2. react-native 프로젝트 생성
-3. android studio 설치
-4. 앱 실행
+> 이번 글에서는 윈도우에서 react-native 프로젝트를 만들고 앱을 실행해보는 과정에 대해 알아볼게요.
 
 ### 1. node.js 설치
 

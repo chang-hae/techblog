@@ -6,11 +6,7 @@ import Markdown from '../components/markdown/Markdown';
 
 const content = `
 
-> 이번 글에서는 react-navigation/bottom-tabs 를 사용해서 하단 탭 네비게이션을 구현하는 과정에 대해 알아보려해요.
-
-1. 패키지 설치
-2. 하단 탭 네비게이션 구현
-3. 화면 전환 테스트
+> 이번 글에서는 react-navigation/bottom-tabs 를 사용해서 하단 탭 네비게이션을 구현하는 과정에 대해 알아볼게요.
 
 ### 1. 패키지 설치
 

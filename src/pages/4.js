@@ -6,11 +6,7 @@ import Markdown from '../components/markdown/Markdown';
 
 const content = `
 
-> 이번 글에서는 react-navigation 을 사용해서 화면 전환하는 부분에 대해 알아보려해요.
-
-1. 화면 전환 관련 패키지 설치
-2. 프로젝트에 네비게이션 적용
-3. 앱 화면 전환 테스트
+> 이번 글에서는 react-navigation 을 사용해서 화면 전환하는 부분에 대해 알아볼게요.
 
 ### 1. 화면 전환 관련 패키지 설치
 

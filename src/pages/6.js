@@ -6,7 +6,7 @@ import Markdown from '../components/markdown/Markdown';
 
 const content = `
 
-> 이번 글에서는 react native 앱에서 react-native-vector-icons 로 아이콘을 사용하는 방법에 대해 알아볼께요.
+> 이번 글에서는 react native 앱에서 react-native-vector-icons 로 아이콘을 사용하는 방법에 대해 알아볼게요.
 
 ### 1. react-native-vector-icons 패키지 설치
 

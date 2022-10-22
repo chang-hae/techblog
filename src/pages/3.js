@@ -6,11 +6,7 @@ import Markdown from '../components/markdown/Markdown';
 
 const content = `
 
-> 이번 글에서는 react-native 프로젝트 첫 생성 후 개발을 위한 세팅 과정을 정리해봤어요.
-
-1. 폴더 구조 세팅
-2. Styled Component 스타일링 적용
-3. 절대경로 사용 설정
+> 이번 글에서는 react-native 프로젝트 첫 생성 후 개발을 위한 세팅 과정에 대해 알아볼게요.
 
 ### 1. 폴더 구조 세팅
 
