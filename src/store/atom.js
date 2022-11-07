@@ -40,5 +40,11 @@ export const postState = atom({
             division: divcode.reactNative,
             datetime: "2022. 10. 22",
         },
+        {
+            no: 7,
+            title: "다크모드 적용하기",
+            division: divcode.reactNative,
+            datetime: "2022. 11. 07",
+        },
     ]
 })
