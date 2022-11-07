@@ -28,7 +28,7 @@ yarn add @react-native-community/async-storage
 
 아래와 같이 **\`Theme\`** 폴더를 만들고 그 안에 ***index.tsx*** 와 ***@types/index.d.tsx*** 파일을 만들어주세요.
 
-![package.json](/pages/7/2.jpg)
+![theme folder](/pages/7/2.jpg)
 
 그리고 ***index.d.ts*** 에서는 *CustomThemeContext* 에서 사용할 타입을 정의해볼께요.
 
@@ -48,7 +48,7 @@ interface ITheme {
 }
 \`\`\`
 
-**\`IThemeContext\`** 는 *CustomThemeContextProvier* 에서 제공해주는 변수를 정의하고, **\`ITheme\`** 는 *theme* 변수에 담길 객체의 타입을 정의해주는 역할을 해요.
+**\`IThemeContext\`** 는 *CustomThemeContextProvier* 에서 제공하는 변수를 정의하고, **\`ITheme\`** 는 *theme* 객체에 담길 변수의 타입을 정의해주는 역할을 해요.
 
 \`\`\`javascript
 import { Appearance } from 'react-native';
@@ -120,19 +120,17 @@ const CustomThemeContextProvider = ({ children }: Props) => {
 export { CustomThemeContextProvider, CustomThemeContext };
 \`\`\`
 
-앞서 만들어줬던 ***IThemeContext*** 타입을 이용해서 **\`createContext\`** 함수를 통해 *CustomThemeContext* 를 생성해주세요.
+먼저 앞서 만들어줬던 ***IThemeContext*** 타입을 이용해서 **\`createContext\`** 함수를 통해 *CustomThemeContext* 를 생성합니다.
 
-그리고 *CustomThemeContextProvier* 컴포넌트에서 *CustomThemeContext* 에서 제공할 변수에 대해 정의해주면 되요.
-
-**\`isDarkMode\`** 와 **\`theme\`** 변수는 *useState* 로 정의하고 **\`toggleMode\`** 는 화살표 함수로 동작을 정의할께요.
+그리고 **\`isDarkMode\`** 와 **\`theme\`** 변수는 *useState* 로 정의하고 **\`toggleMode\`** 는 화살표 함수로 동작을 정의합니다.
 
 ***isDarkMode*** 와 ***theme*** 는 항상 같이 붙어 다니는 변수예요.
 
-isDarkMode 가 true 이면 theme 의 값은 darkTheme 가 되고, isDarkMode 가 false 이면 theme 의 값은 lightTheme 가 되요.
+isDarkMode 가 true 이면 theme 의 값은 *darkTheme* 가 되고, isDarkMode 가 false 이면 theme 의 값은 *lightTheme* 가 되요.
 
-darkTheme 와 lightTheme 는 아래 theme 공통 파일에 정의해줄게요.
+*darkTheme* 와 *lightTheme* 는 아래 theme 공통 파일에 정의해줄게요.
 
-![package.json](/pages/7/3.jpg)
+![common theme file](/pages/7/3.jpg)
 
 \`\`\`javascript
 import { GRAY_100, GRAY_200, GRAY_400, GRAY_50, GRAY_600, GRAY_900, TIFFANY_BLUE } from "./constant";
@@ -251,9 +249,9 @@ Button.defaultProps = {
 export default Button;
 \`\`\`
 
-***Props*** 로 전달받은 *theme* 객체는 *styled-components/native* 의 **\`ThemeProvider\`** 에 전달해주세요.
+**Button** 컴포넌트에서는 ***Props*** 로 전달받은 *theme* 객체를 *styled-components/native* 의 **\`ThemeProvider\`** 에 전달해줍니다.
 
-그러면 마법처럼 **Styled** 정의부에서 *theme* 객체의 변수를 꺼내어 쓸 수 있게되요. 
+그러면 마법처럼 **Styled** 정의부에서 *theme* 객체의 변수를 꺼내어 모드에 맞는 컬러가 적용되요.
 
 \`\`\`javascript
 const StyleButton = Styled.TouchableOpacity\`
@@ -270,6 +268,45 @@ const StyleButtonLabel = Styled.Text\`
   color: ${(props: any) => props.theme.point};
 \`;
 \`\`\`
+
+### 4. toggleMode 함수로 다크 모드 변환하기
+
+\`\`\`javascript
+const ApplicationSet = () => {
+  const { logout } = useContext<IUserContext>(UserContext);
+  const { theme, isDarkMode, toggleMode } = useContext<IThemeContext>(CustomThemeContext);
+
+  return (
+      <ThemeProvider theme={theme}>
+          <Container justifyContent='space-around'>
+              <SwitchContainer>
+                  <SwitchItem>
+                      <Title theme={theme} title={"다크 모드 사용"} />
+                      <Switch
+                          trackColor={{ false: theme.inversePoint, true: theme.inversePoint }}
+                          thumbColor={theme.point}
+                          ios_backgroundColor={theme.inversePoint}
+                          onValueChange={toggleMode}
+                          value={isDarkMode}
+                      />
+                  </SwitchItem>
+              </SwitchContainer>
+              <Button theme={theme} label={"로그아웃"} disabled={false} onPress={logout} />
+          </Container>
+      </ThemeProvider>
+  );
+}
+
+export default ApplicationSet;
+\`\`\`
+
+*CustomThemeContext* 에서 **\`toggleMode\`** 함수를 불러와 다크 모드 사용 스위치의 ***onValueChange*** *Props* 로 전달해줍니다.
+
+### 5. 동작 테스트
+
+앱을 실행하고 스위치를 누르면 다크 모드/라이트 모드가 전환되는 것을 확인할 수 있어요.
+
+![dark mode test](/pages/7/4.gif)
 `;
 
 const Page7 = () => {
