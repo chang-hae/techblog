@@ -46,5 +46,11 @@ export const postState = atom({
             division: divcode.reactNative,
             datetime: "2022. 11. 07",
         },
+        {
+            no: 8,
+            title: "앱 아이콘 적용하기",
+            division: divcode.reactNative,
+            datetime: "2022. 12. 06",
+        },
     ]
 })
