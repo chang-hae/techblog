@@ -39,7 +39,7 @@ react-native set-splash --path ./src/Assets/Images/app_splash.png --resize conta
 ![package.json](/pages/9/3.jpg)
 ![package.json](/pages/9/4.jpg)
 
-### 4. react-native-splash-screen 으로 스플래쉬 이미지 제어하기
+### 4. react-native-splash-screen 설치하기
 
 스플래쉬 이미지를 추가한 뒤 이를 제어하는 코드를 함께 넣어주어야 정상적으로 스플래쉬 이미지를 보여줄 수 있는데요.
 
@@ -50,6 +50,8 @@ react-native set-splash --path ./src/Assets/Images/app_splash.png --resize conta
 \`\`\`bash
 yarn add react-native-splash-screen
 \`\`\`
+
+### 5. Android 버그 수정
 
 라이브러리 설치 완료 후 앱을 빌드하여 실행해보려 하면 아래와 같이 에러가 나면서 실패하게 되는데요. ㅜㅜ
 
@@ -118,7 +120,26 @@ public class MainActivity extends ReactActivity {
 }
 \`\`\`
 
-이렇게 수정한 후 리액트 코드로 돌아와 *App.tsx* 에 아래와 같이 스플래쉬 이미지를 숨김처리해주는 코드를 추가해주면 끝이예요.
+### 6. Ios SplashScreen 설정
+
+Xcode 에서 프로젝트를 우클릭 하신 후 메뉴 목록 중 *Add Files to "[PROJECT_NAME]"...* 을 클릭해주세요.
+
+그러면 파일을 선택할 수 있는 창이 뜨는데요.
+
+여기서 *SplashScreen.storyboard* 를 선택하고 *Add* 를 눌러줍니다.
+
+![package.json](/pages/9/7.jpg)
+![package.json](/pages/9/8.jpg)
+
+그리고 프로젝트를 클릭한 후 *General* 탭에서 *Launch Screen File* 을 *SplashScreen* 으로 변경해주세요.
+
+![package.json](/pages/9/9.jpg)
+
+여기까지 하면 Ios 세팅은 끝이예요. 
+
+### 7. JS 코드 추가
+
+리액트 코드로 돌아와 *App.tsx* 에 아래와 같이 스플래쉬 이미지를 숨김처리해주는 코드를 추가해주세요.
 
 \`\`\`javascript
 import { useEffect } from 'react';
@@ -149,9 +170,9 @@ const App = () => {
 export default App;
 \`\`\`
 
-### 5. 앱 실행 테스트
+### 8. 앱 실행 테스트
 
-![package.json](/pages/9/7.gif)
+![package.json](/pages/9/10.gif)
 
 앱을 실행하면 스플래쉬 이미지가 잘 나오는 것을 확인할 수 있어요 😁
 `;
