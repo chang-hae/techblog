@@ -52,5 +52,11 @@ export const postState = atom({
             division: divcode.reactNative,
             datetime: "2022. 12. 06",
         },
+        {
+            no: 9,
+            title: "앱 스플래쉬 이미지 적용하기",
+            division: divcode.reactNative,
+            datetime: "2022. 12. 07",
+        },
     ]
 })

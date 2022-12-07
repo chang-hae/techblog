@@ -29,7 +29,7 @@ yarn add -D @bam.tech/react-native-make
 
 ### 2. 앱 아이콘 이미지 준비하기
 
-react-native-make 를 이용해서 앱 아이콘을 생성하려면 *[1024 x 1024 사이즈의 png](https://github.com/bamlab/react-native-make/blob/master/docs/set-icon.md "set-icon ling")* 파일이 필요해요.
+react-native-make 를 이용해서 앱 아이콘을 생성하려면 *[1024 x 1024 사이즈의 png](https://github.com/bamlab/react-native-make/blob/master/docs/set-icon.md "set-icon link")* 파일이 필요해요.
 
 앱 아이콘이 준비되었다면 프로젝트로 돌아와 ./src/Assets/images/app_icon.png 경로에 아이콘 이미지 파일을 옮겨주세요.
 
