@@ -58,5 +58,17 @@ export const postState = atom({
             division: divcode.reactNative,
             datetime: "2022. 12. 07",
         },
+        {
+            no: 10,
+            title: "Github Actions 로 Spring Boot 빌드하기",
+            division: divcode.cicd,
+            datetime: "2022. 12. 10",
+        },
+        {
+            no: 11,
+            title: "Github Actions 로 Docker Image 생성 후 Docker Hub 에 푸시하기",
+            division: divcode.cicd,
+            datetime: "2022. 12. 10",
+        },
     ]
 })

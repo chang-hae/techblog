@@ -3,4 +3,5 @@ export const divcode = {
     reactNative: "React-Native",
     java: "Java",
     aws: "Aws",
+    cicd: "CI/CD",
 }
