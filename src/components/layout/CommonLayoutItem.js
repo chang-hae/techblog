@@ -46,7 +46,7 @@ export const NavigationIconLink = styled.img`
 export const FlexContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 7rem;
+    margin-top: 5rem;
 `;
 
 export const Header = styled.div`
