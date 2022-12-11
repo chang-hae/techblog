@@ -8,7 +8,7 @@ const content = `
 
 > 이번 글에서는 Github Actions 을 사용해 도커 이미지를 만들고 Docker Hub 에 푸시하는 방법에 대해 알아볼게요.
 
-### 1. workflows.yml 파일 생성
+### 1. .yml 파일 생성
 
 ### 2. docker job 추가
 
