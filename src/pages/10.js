@@ -111,7 +111,7 @@ workflow 가 정상적으로 실행되어 **\`success\`** 한 것을 확인할 �
 
 const Page10 = () => {
     const postCards = useRecoilValue(postState);
-    const post = postCards.filter(postCard => postCard.no === 9).pop();
+    const post = postCards.filter(postCard => postCard.no === 10).pop();
 
     return (
         <PostLayout
