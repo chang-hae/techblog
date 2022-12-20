@@ -76,5 +76,11 @@ export const postState = atom({
             division: divcode.aws,
             datetime: "2022. 12. 18",
         },
+        {
+            no: 13,
+            title: "AWS SES 사용법 (2) - AWS Route53 과 구글 워크스페이스 Gmail 연동하기",
+            division: divcode.aws,
+            datetime: "2022. 12. 19",
+        },
     ]
 })

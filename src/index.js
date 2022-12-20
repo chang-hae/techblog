@@ -18,6 +18,7 @@ import Page9 from "./pages/9";
 import Page10 from "./pages/10";
 import Page11 from "./pages/11";
 import Page12 from "./pages/12";
+import Page13 from "./pages/13";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -41,6 +42,7 @@ root.render(
               <Route path="/10" element={<Page10 />}></Route>
               <Route path="/11" element={<Page11 />}></Route>
               <Route path="/12" element={<Page12 />}></Route>
+              <Route path="/13" element={<Page13 />}></Route>
             </Routes>
           </ScrollToTop>
         </BrowserRouter>
