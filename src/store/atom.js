@@ -82,5 +82,11 @@ export const postState = atom({
             division: divcode.aws,
             datetime: "2022. 12. 19",
         },
+        {
+            no: 14,
+            title: "AWS SES 사용법 (3) - AWS SES 생성하기",
+            division: divcode.aws,
+            datetime: "2022. 12. 25",
+        },
     ]
 })
