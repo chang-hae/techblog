@@ -58,7 +58,7 @@ const content = `
 
 ![aws user create](/pages/15/9.jpg)
 
-태그 추가 부분인데 저는 태크를 추가하지 않을 거라서 바로 다음버튼을 눌렀어요.
+태그 추가 부분인데 저는 태그를 추가하지 않을 거라서 바로 다음버튼을 눌렀어요.
 
 ![aws user create](/pages/15/10.jpg)
 

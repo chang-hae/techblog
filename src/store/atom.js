@@ -98,7 +98,7 @@ export const postState = atom({
             no: 16,
             title: "AWS SES 사용법 (5) - 스프링 부트에서 AWS SES SDK 로 이메일 발송하기",
             division: divcode.aws,
-            datetime: "2022. 12. 26",
+            datetime: "2022. 12. 30",
         },
     ]
 })
