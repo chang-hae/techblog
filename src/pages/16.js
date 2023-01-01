@@ -66,9 +66,9 @@ public class AwsSesComponent {
     }
 \`\`\`
 
-*AWS_SES_ACCESS_KEY* 와 *AWS_SES_SECRET_KEY* 값은 *[이전 글](http://techblog.changhae.io/15 "chang hae tech blog link")* 에서 만들어줬던 AWS IAM 사용자 정보를 넣어주면 되요.
+*AWS_SES_ACCESS_KEY* 와 *AWS_SES_SECRET_KEY* 값은 *[이전 글](http://techblog.changhae.io/15 "chang hae tech blog link")* 에서 만들어줬던 AWS SES 발송 사용자(ses-assume-user) 정보를 넣어주면 되요.
 
-한 부분씩 따로 살펴보면 아래 코드는 AWS IAM 사용자 인증정보를 사용해서 BasicAwsCredentials 객체를 만들고, 임시 자격 증명을 발급받기 위해 사용하게 될 STS(Aws Security Service) 객체를 생성해주는 부분이예요.
+한 부분씩 따로 살펴보면 아래 코드는 사용자 인증정보를 사용해서 BasicAwsCredentials 객체를 만들고, 임시 자격 증명을 발급받기 위해 사용하게 될 STS(Aws Security Service) 객체를 생성해주는 부분이예요.
 
 \`\`\`java
 @PostConstruct
@@ -83,7 +83,7 @@ public void init() {
 
 다음은 이메일 발송처리를 하는 부분이예요.
 
-to 는 이메일을 받는 사람, subject 는 이메일 제목 그리고 content 는 이메일 내용이예요.
+**to** 는 이메일을 받는 사람, **subject** 는 이메일 제목 그리고 **content** 는 이메일 내용이예요.
 
 \`\`\`java
 public SendEmailResult send(String to, String subject, String content) {
@@ -174,7 +174,7 @@ ARN_AWS_IAM_ROLE 값은 AWS 에서 생성한 역할에 부여된 arn 값을 넣�
 
 ### 2. SES 발송 테스트 코드 작성
 
-그러면 이제 만들어준 *AwsSesComponent* 에 대한 테스트 코드를 작성해볼게요.
+그러면 이제 만들어준 **AwsSesComponent** 에 대한 테스트 코드를 작성해볼게요.
 
 \`\`\`java
 @ExtendWith(SpringExtension.class)
@@ -195,9 +195,9 @@ public class AwsSesTest {
 }
 \`\`\`
 
-@SpringBootTest 애노테이션을 사용하면 모든 빈을 다 불러오기 때문에 테스트가 느려지게 되요.
+**@SpringBootTest** 애노테이션을 사용하면 모든 빈을 다 불러오기 때문에 테스트가 느려지게 되요.
 
-그래서 테스트에 필요한 AwsSesComponent 만 불러오도록 명시해주었어요.
+그래서 테스트에 필요한 **AwsSesComponent** 만 불러오도록 명시해주었어요.
 
 그리고 ****** 으로 블러처리한 부분에는 이메일을 받을 주소를 넣어주시면 되요.
 
@@ -213,7 +213,7 @@ public class AwsSesTest {
 
 ![aws ses email send test](/pages/16/2.jpg)
 
-여기까지 Google Workspace, Aws SES/STS, Spring Boot 를 사용하여 이메일 발송하는 방법에 대해 알아보았어요.
+여기까지 **Google Workspace, Aws SES/STS, Spring Boot** 를 사용하여 이메일 발송하는 방법에 대해 알아보았어요.
 
 긴 글 끝까지 읽어주셔서 감사해요. ✨🎉🎊
 `;

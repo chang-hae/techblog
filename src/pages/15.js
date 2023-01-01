@@ -44,7 +44,7 @@ const content = `
 
 ![aws user create](/pages/15/7.jpg)
 
-다음으로 이 부분은 **중요**해요! 스프링 부트 애플리케이션에서 AWS SES 발송 기능을 사용해야 하기 때문에 SDK 를 써야하는데요.
+다음으로 이 부분이 **중요**한데요. 스프링 부트 애플리케이션에서 AWS SES 발송 기능을 사용하기 위해서는 SDK 를 써야하는데요.
 
 여기에 맞는 방식은 **\`액세스 키 - 프로그래밍 방식 액세스\`** 예요.
 
@@ -62,7 +62,7 @@ const content = `
 
 ![aws user create](/pages/15/10.jpg)
 
-사용자 추가 프로세스의 마지막 *확인* 단계예요.
+사용자 추가 프로세스의 마지막 **확인** 단계예요.
 
 잘못된 부분이 없다면 **사용자 만들기** 버튼을 눌러주세요.
 
@@ -72,15 +72,13 @@ const content = `
 
 ![aws user create](/pages/15/11.jpg)
 
-이제 *역할* 과 *사용자* 생성이 완료되었으니 스프링 부트에서 이메일을 발송해보도록 할게요.
-
 ### 3. SES 발송 사용자에 AssumeRole 권한 부여
 
-아무 권한도 없는 SES 발송 사용자(ses-assume-user) 에게 AssumeRole 권한 딱 하나만 부여할거예요.
+SES 발송 사용자(ses-assume-user) 는 앞에서 만들어준 SES 발송 역할(ses-assume-role)을 **Assume** 하는 일만 수행하는데요.
 
-말그대로 역할(Role) 을 사용하는 권한인데요. 이는 앞서 만들어준 역할(ses-assume-role)을 사용하기 위함이예요.
+이 **Assume** 을 할 수 있도록 AssumeRole 권한을 부여해줄게요.
 
-먼저 사용자 화면에서 *ses-assume-user* 를 클리해주세요.
+먼저 사용자 화면에서 **ses-assume-user** 를 클릭해주세요.
 
 ![aws user create](/pages/15/12.jpg)
 
